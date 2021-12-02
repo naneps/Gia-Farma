@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table class="table cart">
+        <thead>
+            <tr>
+                <th class="cart-product-remove">&nbsp;</th>
+                <th class="cart-product-thumbnail">&nbsp;</th>
+                <th class="cart-product-name">Product</th>
+                <th class="cart-product-price">Unit Price</th>
+                <th class="cart-product-quantity">Quantity</th>
+                <th class="cart-product-subtotal">Total</th>
+            </tr>
+    </thead>
+    <tbody>
+            <tr class="cart_item">
+                <td class="cart-product-remove">
+                    <a href="#" class="remove" title="Remove this item"><i class="icon-trash2"></i></a>
+                </td>
+
+                <td class="cart-product-thumbnail">
+                    <a href="#"><img width="64" height="64" src="images/shop/thumbs/small/dress-3.jpg" alt="Pink Printed Dress"></a>
+                </td>
+
+                <td class="cart-product-name">
+                    <a href="#">Pink Printed Dress</a>
+                </td>
+
+                <td class="cart-product-price">
+                    Rp <span id="price" class="amount">50000</span>
+                </td>
+
+                <td class="cart-product-quantity">
+                    <div class="quantity clearfix">
+                        <input type="button" value="-" class="minus" field="quantity">
+                        <input type="text" id="quantity" name="quantity" value="1" class="qty" />
+                        <input type="button" value="+" class="plus" field="quantity">
+                    </div>
+                </td>
+
+                <td class="cart-product-subtotal">
+                    <span id="total" class="total_amount"></span>
+                </td>
+            </tr>
+             <tr class="cart_item">
+                <td class="cart-product-remove">
+                    <a href="#" class="remove" title="Remove this item"><i class="icon-trash2"></i></a>
+                </td>
+
+                <td class="cart-product-thumbnail">
+                    <a href="#"><img width="64" height="64" src="images/shop/thumbs/small/dress-3.jpg" alt="Pink Printed Dress"></a>
+                </td>
+
+                <td class="cart-product-name">
+                    <a href="#">Other Dress</a>
+                </td>
+
+                <td class="cart-product-price">
+                    Rp <span id="price" class="amount">40000</span>
+                </td>
+
+                <td class="cart-product-quantity">
+                    <div class="quantity clearfix">
+                        <input type="button" value="-" class="minus" field="quantity">
+                        <input type="text" id="quantity" name="quantity" value="1" class="qty" />
+                        <input type="button" value="+" class="plus" field="quantity">
+                    </div>
+                </td>
+
+                <td class="cart-product-subtotal">
+                    <span id="total" class="total_amount"></span>
+                </td>
+            </tr>
+     </tbody>
+</table>
+<script>
+    function calculate(obj){
+            var price = parseFloat($(obj).parent().parent().parent().find('.amount').text()) || 0;
+            var quantity = parseInt($(obj).parent().find('.qty').val());
+            var total = price * quantity;
+
+           $(obj).parent().parent().parent().find('.total_amount').text(total);;
+        }
+
+        function changeQuantity(num,obj){
+            //$("#quantity").val( parseInt($("#quantity").val())+num);
+            $(obj).parent().find('.qty').val( parseInt($(obj).parent().find('.qty').val())+num);
+        }
+
+        $().ready(function(){
+            //calculate();
+            $(".minus").click(function(){
+                changeQuantity(-1,this);
+                calculate(this);
+            });
+            $(".plus").click(function(){
+                changeQuantity(1,this);
+                calculate(this);
+            });
+
+            //$("#quantity").keyup(function(e){
+							$(".qty").keyup(function(e){
+								if (e.keyCode == 38) changeQuantity(1,this);
+                if (e.keyCode == 40) changeQuantity(-1,this);
+                calculate(this);
+            });
+
+            /*var quantity = document.getElementById("quantity");
+            quantity.addEventListener("input", function(e) {
+                calculate();
+            });
+
+            $('#total').each(function() {
+                $(this).before("Rp ")
+            });*/
+        });
+</script>
+</body>
+</html>
