@@ -22,7 +22,7 @@
             --freshRed: #f50000;
         }
 
-        #quantity {
+        #kuantitas {
 
             text-align: center;
             width: 30px;
@@ -32,8 +32,8 @@
 
         .plus,
         .minus {
-
-            border-radius: 100%;
+            width: 30px;
+            height: 30px;
         }
 
         .hapus {
@@ -72,7 +72,7 @@
                 </div>
                 <div class="section-body">
                     <div class="row">
-                        <div class="col-8">
+                        <div class="col-8 ">
                             <div class="card">
                                 <div class="card-header">
                                     <h4>Transaksi</h4>
@@ -99,7 +99,6 @@
 
 
                                         </table>
-                                        <button type="submit" class="btn btn-primary">Tambah</button>
                                         </form>
                                     </div>
                                 </div>
@@ -107,13 +106,35 @@
                         </div>
                         <div class="col-4">
                             <div class="card">
+                                <div class="card-header">
+                                    <h4>Nota</h4>
+                                </div>
                                 <div class="card-body">
+                                    <div class="form-group">
+                                        <label>Purchase Code</label>
+                                        <input type="text" class="form-control purchase-code"
+                                            placeholder="ASDF-GHIJ-KLMN-OPQR">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Total Harga</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                    Rp
+                                                </div>
+                                            </div>
+                                            <input type="text" disabled class="form-control currency">
+                                        </div>
+                                    </div>
 
+                                    <button type="submit" class="btn btn-primary">Simpan</button>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
+
 
 
         </section>
@@ -180,7 +201,6 @@
                     type: 'get',
                     dataType: 'JSON',
                     success: function(res) {
-
                         hideProduk()
                         let no = $('#tabel-transaksi tbody tr').length
                         // let kuantitas = $('qty').val();
@@ -191,8 +211,8 @@
                 <td id="nama_obat">${res.nama_obat}</td>
                 <td id="harga" class="harga-${res.id}">${res.harga}</td>
                 <td class"grup-qty"">
-                <button type="button"  class="btn-danger minus" field="quantity" onclick="minus(${res.id})"><i
-                class="fas fa-minus"></i></button>
+                      <button type="button" class="btn btn-icon btn-danger minus" field="quantity" onclick="minus(${res.id})"><i
+                        class="fas fa-minus"></i></button>
                 <input type="number" id="kuantitas"  value="1" class="qty-${res.id} " />
                 <button type="button" class="btn-success plus" field="quantity" onclick="plus(${res.id})"><i
                         class="fas fa-plus"></i></button>
