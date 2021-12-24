@@ -1,0 +1,161 @@
+/**
+ *
+ * You can write your CSS code here, DO NOT touch the default JavaScript file
+ * because it will make it harder for you to update.
+ *
+ */
+
+/*# sourceMappingURL=custom.css.map */
+:root {
+    --red: #e00b0b;
+    --softgreen: #8ce38c;
+    --softblue: #7075ff;
+    --purpBLue: #5403ff;
+    --freshGreen: #28e10a;
+    --freshRed: #f50000;
+}
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+p.or {
+    display: flex;
+    align-items: center;
+}
+p.or::before {
+    content: "";
+    flex: 1;
+    margin-right: 1rem;
+    height: 1px;
+    background-color: #000;
+}
+p.or::after {
+    content: "";
+    flex: 1;
+    margin-left: 1rem;
+    height: 1px;
+    background-color: #000;
+}
+.top-shadow {
+    position: absolute;
+    background-color: rgba(5, 5, 5, 0.4);
+    width: fit-content;
+    height: fit-content;
+}
+.top-shadow h2 {
+    font-size: 40px;
+    font-weight: 600;
+}
+.title h3 {
+    font-weight: 600;
+}
+.title a {
+    font-weight: 400;
+    font-size: 18px;
+}
+.auth a {
+    font-weight: 500;
+    font-size: 16px;
+}
+.navbar-nav a {
+    font-size: 14px;
+    font-weight: bold;
+}
+.navbar-bg {
+    background: var(--purpBLue);
+}
+.footer-links {
+    list-style: none;
+    list-style-position: outside;
+}
+.footer-link a {
+    display: block;
+}
+.sidebar-link {
+    display: block;
+    text-decoration: none;
+    color: lightslategray;
+    padding: 3px 0px;
+}
+.sidebar {
+    padding: 8px 10px;
+    width: 300px;
+}
+.sidebar-header {
+    font-size: 16px;
+    font-weight: bolder;
+    padding: 10px 0px;
+}
+.sidebar-divider {
+    padding: 5px 0px;
+    border-bottom: 1px solid #e5e5e5;
+}
+.navbar-divider {
+    width: 1px;
+    background-color: black;
+    margin: 0px 8px;
+}
+
+/* .btn-softblue {
+    background: var(--softblue);
+    color: white;
+    outline: 0;
+    font-size: 1em;
+    font-weight: 600;
+    border: none;
+    padding: 2em 4em;
+    transition: all 0.3s ease-out;
+    box-shadow: inset 0 0px 0 0 rgba(0, 0, 0, 0.2), 2px 3px 0 0 #b5b0b8,
+        3px 2px 0 0 #b5b0b8;
+}
+
+.btn-softblue:active {
+    background: var(--softblue);
+    box-shadow: inset 0 -4px 0 0 rgba(0, 0, 0, 0.2), 1px 1px 0 0 #b5b0b8,
+        2px 2px 0 0 #b5b0b8, 3px 3px 0 0 #b5b0b8, 4px 4px 0 0 #b5b0b8;
+} */
+
+.btn.edit {
+    background-color: var(--freshGreen);
+    font-size: 12px;
+    color: white;
+    font-weight: 600;
+    box-shadow: inset 0 0px 0 0 rgba(0, 0, 0, 0.2), 2px 3px 0 0 #b5b0b8,
+        3px 2px 0 0 #b5b0b8;
+}
+.btn.edit:active {
+    background-color: var(--freshGreen);
+    color: var(--freshGreen);
+
+    transition: all 0.1s ease-in;
+}
+.btn.edit:hover {
+    color: var(--freshGreen);
+    border: 2px solid var(--freshGreen);
+    box-shadow: none;
+    transition: all 0.1s ease-in;
+}
+.btn.delete {
+    background-color: var(--freshRed);
+    font-size: 12px;
+    color: white;
+    font-weight: 600;
+    box-shadow: inset 0 0px 0 0 rgba(0, 0, 0, 0.2), 2px 3px 0 0 #b5b0b8,
+        3px 2px 0 0 #b5b0b8;
+}
+.btn.delete:active {
+    background-color: var(--freshRed);
+    color: var(--freshRed);
+
+    transition: all 0.1s ease-in;
+}
+.btn.delete:hover {
+    color: var(--freshRed);
+    border: 2px solid var(--freshRed);
+    box-shadow: none;
+    transition: all 0.1s ease-in;
+}
+.active {
+    color: var(--purpBLue);
+}
